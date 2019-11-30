@@ -1,0 +1,30 @@
+#数据库配置
+spring:
+  aop:
+    proxy-target-class: true
+  #  profiles:
+  #    active: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://49.234.203.230:3306/exercise?useSSl=false&serverTimezone=GMT%2B8&characterEncoding=utf-8
+    username: root
+    password: 815011LZM
+    hikari:
+      idle-timeout: 60000
+      maximum-pool-size: 30
+      minimum-idle: 10
+#mybatis-plus配置
+mybatis-plus:
+  mapper-locations: mapper/TQuestion/*.xml
+  type-aliases-package: top.shiqudehuiyi.bolema.question.entity
+  global-config:
+    id-type: 0
+    field-strategy: 2
+    capital-mode: true
+    refresh-mapper: true
+#日志配置
+logging:
+  level:
+    root: warn
+    top.shiqudehuiyi.bolema.question.mapper: trace
+    top.shiqudehuiyi.bolema.question.controller: trace
